@@ -1,0 +1,10 @@
+from player import Player
+
+class AutomatedPlayer(Player):
+    def hit_or_stay(self, deck):
+        while not self.stand and not self.is_bust():
+            # Implement decision logic here, e.g., basic Blackjack strategy
+            if self.calculate_hand_value() < 17:  # Example condition
+                self.add_card(deck.deal())
+            else:
+                self.stand = True
